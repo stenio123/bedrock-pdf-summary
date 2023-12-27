@@ -1,9 +1,6 @@
 
 
 import os
-# use your own OPENAPI Key
-#os.environ["OPENAI_API_KEY"] = "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"
-
 import gradio as gr
 from langchain import OpenAI, PromptTemplate
 from langchain.chains.summarize import load_summarize_chain
@@ -34,19 +31,16 @@ def summarize_pdf(pdf_file_path):
     input_token_count = 0
     estimated_input_token_count = 0
 
+    # docs is a list of each page_content
     for doc in docs:
         page_content = doc.page_content
         page_token_count = count_tokens(page_content)
         input_token_count += page_token_count
         estimate_token_count = estimate_tokens(page_content)
         estimated_input_token_count += estimate_token_count
-    #print(page_content)
     chain = load_summarize_chain(llm, chain_type="map_reduce")
     summary = chain.run(docs)   
-    # Calculate the token count for the generated summary
-    #input_token_count = count_tokens(page_content)
     output_token_count = count_tokens(summary)
-    #estimated_input_token_count = estimate_tokens(page_content)
     estimated_output_token_count = estimate_tokens(summary)
 
     return summary, input_token_count,output_token_count, estimated_input_token_count, estimated_output_token_count
