@@ -1,0 +1,15 @@
+Here is a concise summary of the key points:
+
+- The passage discusses AI21 Labs' new neuro-symbolic architecture called MRKL (Modular Reasoning, Knowledge and Language) which combines large language models with external knowledge sources and reasoning modules. 
+
+- MRKL aims to overcome limitations of language models alone by enabling access to real-world knowledge and symbolic reasoning abilities. 
+
+- The architecture includes neural models complemented by discrete symbolic components for knowledge representation and reasoning.
+
+- AI21 Labs has implemented MRKL in a system called Jurassic-X which shows capabilities beyond existing language models.
+
+- Experiments demonstrate how Jurassic-X can learn to extract arguments from math word problems, an example of bridging the neuro-symbolic divide.
+
+- Results show Jurassic-X generalizes well across number digits, wordings, question formats, and from single to multi-operation problems.
+
+- MRKL represents a promising approach to combine strengths of neural networks and symbolic systems.
